@@ -1,0 +1,52 @@
+body{
+    background-image: url(sea.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 98vh;
+    margin-top: 20px;
+  position: fixed;
+
+
+    
+}
+
+
+.container{
+    
+   
+    height: 400px;
+    width: 500px;
+    align-items: center;
+    background: linear-gradient(120deg,rgba(0, 0, 0, 0.712),rgba(2, 2, 105, 0.443));
+    border-radius: 20px;
+    justify-content: center;
+  margin-left: 370px;
+  margin-top: 60px;
+ 
+}
+.cards{
+   color: white;
+   justify-content: center;
+   align-items: center;
+   
+}
+.cards span{
+    text-align: center;
+    font-weight: 500;
+}
+.text-center .hi{
+    display: block;
+    
+
+   
+}
+#on{
+    width: 470px;
+    margin-top: 20px;
+}
+#gg{
+    width: 470px;
+}
+#gh{
+    width: 470px;
+}

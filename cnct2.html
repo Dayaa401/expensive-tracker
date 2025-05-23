@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Carattere" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="procnct.css">
+</head>
+<body>
+    <div class="header">
+       <a href="login.html"><h3><img src="login-silver.png" alt="" width="65px" id="back" class="m-0"></h3></a>
+        <h1 class="m-0"><img src="dvre2.png" alt="" width="160px" id="logo" class="m-0">Expensive Tracker </h1>
+        <img src="histry-bg.png" alt="" onclick="window.location.href='cnct3.html'" width="65px">
+    </div>
+    <div id="nav">
+        nav
+    </div>
+<div id="kk">
+    <div id="nm">
+        <h1>Hi.,....
+            <script>
+               document.write(localStorage.getItem('name'));
+            </script>
+        </h1>
+        <h1>Welcome to Expensive Tracker...!</h1>
+    </div>
+   
+    
+    <div class="input-form"> 
+        <div class="form-floating inputs">
+            <input type="date" class="form-control date-input" id="floatingInput" placeholder="Date">
+            <label for="floatingInput">Date</label>
+        </div>
+        <div class="form-floating inputs">
+            <input type="text" class="form-control amount-input" id="floatingInput" placeholder="Amount">
+            <label for="floatingInput">Amount</label>
+        </div>
+        <div class="form-floating inputs">
+            <input type="text" class="form-control description-input" id="floatingInput" placeholder="Description">
+            <label for="floatingInput">Description</label>
+        </div>
+        <select class="form-select inputs transactionType">
+            <option selected>Transaction Type</option>
+            <option value="income">Income</option>
+            <option value="expensive">Expensive</option>
+        </select>
+        <button class="btn" id="add-btn" onclick="addRow()">+</button>
+    </div>
+
+    <div class="cards mt-4">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"> <img src="inc-rbg.png" alt="" width="55px" id="inc">Total Income </h5>
+                <h1 id="totalIncome">0</h1>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"> <img src="exp-rbg.png" alt="" width="25px" id="ex">Total Expensive </h5>
+                <h1 id="expensive">0</h1>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Balance</h5>
+                <h1 id="balance">0</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+<footer>
+    
+   <section><p>Contact us : <em>8919320458</em></p>
+    
+<h5>Developer : <span>A.  Dayanand</span></h5>
+</section> 
+    <div id="sc">
+    <h5>Social Media : </h5>
+   <a href="https://www.instagram.com/dayaa_extrovert?igsh=Z210b2JwZHphazF0"> <img src="insta-bg.png" alt="" width="35px"></a>
+   <a href="https://www.linkedin.com/in/dayanand-allada-872342355/"> <img src="lin-bg.png" alt="" width="55px"></a>
+    <a href="https://github.com/Dayaa401"><img src="git-bg.png" alt="" width="62px"></a>
+   <a href="https://www.youtube.com/@dayaa-extrovert"> <img src="utb-bg.png" alt="" width="65px"></a>
+</div>
+</footer>
+</div>
+<script>
+function addRow() {
+    let date = document.getElementsByClassName('date-input')[0].value;
+    let amount = document.getElementsByClassName('amount-input')[0].value;
+    let transactionType = document.getElementsByClassName('transactionType')[0].value;
+    let description = document.getElementsByClassName('description-input')[0].value;
+
+    if (!date || !amount || transactionType === 'Transaction Type') {
+       
+        return;
+    }  alert("Data successfully added!!"); ;
+
+    let totalIncome = parseFloat(document.getElementById('totalIncome').innerText);
+    let totalExpensive = parseFloat(document.getElementById('expensive').innerText);
+    let balance = parseFloat(document.getElementById('balance').innerText);
+
+    if (transactionType === 'income') {
+        totalIncome += parseFloat(amount);
+        balance += parseFloat(amount);
+    } else if (transactionType === 'expensive') {
+        totalExpensive += parseFloat(amount);
+        balance -= parseFloat(amount);
+    }
+
+    document.getElementById('totalIncome').innerText = totalIncome;
+    document.getElementById('expensive').innerText = totalExpensive;
+    document.getElementById('balance').innerText = balance;
+
+    const transactionData = JSON.parse(localStorage.getItem('transactionData')) || [];
+    transactionData.push({ date, amount, transactionType, description });
+    localStorage.setItem('transactionData', JSON.stringify(transactionData));
+   
+}
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

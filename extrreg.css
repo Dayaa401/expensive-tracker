@@ -1,0 +1,43 @@
+body{
+    background-image: url(shark.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 98vh;
+    
+  position: fixed;
+
+}
+.container{
+    height: 480px;
+    width: 500px;
+    align-items: center;
+    background: linear-gradient(120deg,rgba(0, 0, 0, 0.712),rgba(2, 2, 105, 0.443));
+    border-radius: 20px;
+    justify-content: center;
+  margin-left: 370px;
+  margin-top: 30px;
+}
+.card span{
+    text-align: center;
+    font-weight: 500;
+}
+.container .card{
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+.text-center{
+    display: block;
+}
+#bb{
+    width: 470px;
+    margin-top: 20px;
+}
+#bf{
+    width: 470px;
+    margin-top: 20px;
+}
+#bg{
+    width: 470px;
+    margin-top: 20px;
+}
